@@ -1,0 +1,140 @@
+<!--
+*Author: Patricia Rudden
+*Assignment: TE2.0 Mobile Web Technologies, Digital Skills Academy
+*Student ID: D15123030
+*Date: 10/09/15
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>    
+	<link rel="stylesheet" href="themes/myTheme.min.css" />
+	<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+	<link rel="stylesheet" href="css/myCSS.css"/>
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+
+
+	<title>English Writers</title>
+
+</head>
+
+<body>
+
+	<div id="container"	>
+
+		<div data-role="page" id="home" >
+			<div data-role="panel" class="panel left" id="myPanel">
+				<div data-role="header">
+					<h1>About Us</h1>
+				</div>
+					<div data-role="content">
+				
+					<ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-filter-reveal="false" data-filter-placeholder="Search for authors..." class="myList">  </ul>
+			
+					<a href="#home" data-rel="close" data-role="button"   class="ui-btn ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-home " >Back to Home</a>			
+				</div> 
+			</div>
+
+			<div data-role="header">
+				<h1>Discover English Writers</h1>
+					<a href="#myPanel"  class="ui-btn ui-btn-left ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-arrow-l ">More</a>
+			</div> 
+
+			<div data-role="content">
+				<div class="content-primary">
+					<div data-demo-html="true">		
+						<p class="centre">Discover the great classics of English literature with our reading guide. </p>
+						<p class="centre">Search for an author to find out more about their work</p>				
+						<ul data-role="listview" data-inset="true" data-autodividers="true" data-filter="true" data-filter-reveal="true" data-filter-placeholder="Search for authors..." class="myList" >  					
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	                                                                     
+
+	<script>
+	
+$("document").ready(function(){
+	//get the data from the json file and push it into an array
+	$.getJSON("authors.json", function(data){
+			var myArray = [];
+		$.each(data, function(i, value){
+			myArray.push(value);   
+			});
+		//sort the data - sort each object alphabetically by the author property
+		//Code reuse
+		//Ref:http://stackoverflow.com/questions/979256/sorting-an-array-of-javascript-objects
+		myArray.sort(function(a, b) {					
+  				return a.author.localeCompare(b.author);
+				});
+		displayInfo(myArray);		
+		});
+	
+
+	function displayInfo(array){	
+		//Assign the properties of each object in the array to variables:
+			$.each(array, function(i, value){   
+			var author = value.author;
+			var booksArray = [];
+			booksArray = value.books;
+			var imgSrc = value.image;
+			//dynamically create <li> elements and append to the listview
+			$(".myList").append('<li data-icon="info"><a href="#page' + i + '" data-transition="flip">' + author + ' </a></li>');
+			$(".myList").listview("refresh");
+			//dynamically create a new page for each list item, using the index value of the each method to give them an id.
+			//append the new pages to the body of the DOM
+			$("#container").append('<div data-role="page" id= "page' + i + '">' + addHeader(author)  + getBooks(booksArray)  + '<br/><img src="' + imgSrc + '">' + goBack() + '</div>');	
+
+		});
+
+		}
+
+	   //function to create a header for the dynamically injected pages
+	function addHeader(author){
+		var myhtml = "";
+		myhtml += "<div data-role='header'>";
+		myhtml += "<h2>Novels by " + author + "</h2>";	 
+		myhtml += "</div>"; 		 
+		    return myhtml;
+		}
+
+
+        //function to sort through the array of books and make list items
+	function getBooks(bookarray){
+	  var myhtml = "";
+	  var items = "";
+		for(var j = 0; j < bookarray.length; j++){
+			    items += "<li>" + bookarray[j] + "</li>";
+				}
+	    myhtml ="<ul class='centre'>" + items + "</ul>";
+	  	   return myhtml;
+		}
+   //function to add a button to go back to the home page
+	function goBack(){
+	var myhtml = "";
+	myhtml += "<br/><br/><br/><div class='centre' id='clear'><a href='#home'  class='ui-btn ui-btn-inline ui-corner-all ui-btn-icon-left ui-icon-back'>search again</a></div>";
+			return myhtml;	
+				}
+
+	});
+
+//Code reuse
+//Ref:  http://stackoverflow.com/questions/15995308/how-to-clear-or-reset-the-search-filter-bar-in-listviews  
+$(document).on('click', '#clear', function(){       
+    $('input[data-type="search"]').val('');
+    $('input[data-type="search"]').trigger("keyup");
+});
+	</script>
+</body>
+
+</html>
+
+
