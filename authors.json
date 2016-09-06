@@ -1,0 +1,140 @@
+[{"author":"Jane Austen",
+  "books": ["Mansfield Park",
+            "Pride and Prejudice",
+            "Emma",
+            "Persuasion",
+            "Northanger Abbey"
+            ],
+   "image":   "img/jAusten.jpeg"     
+ },
+ {
+   "author":"Charles Dickens",
+  "books": ["Hard Times",
+            "David Copperfield",
+            "Bleak House",
+            "Nicholas Nickleby",
+            "Little Dorrit",
+            "Great Expectations"
+    ],
+    "image":"img/cDickens.jpeg"
+ },
+ {
+   "author":"Thomas Hardy",
+   "books": ["Jude the Obscure",
+            "Far from the Madding Crowd",
+            "Tess of the d'Urbervilles",
+            "Under the Greenwood Tree",
+            "The Return of the Native"
+   ],
+   "image":"img/tHardy.jpeg"
+  
+ },
+ {
+   "author": "Charlotte Bronte",
+   "books": ["Vilette",
+            "Jane Eyre",
+            "Shirley",
+            "The Professor"
+     ],
+     "image": "img/cBronte.jpeg"
+ },
+ {
+   "author": "Mark Twain",
+   "books": ["The Adventures of Tom Sawyer",
+            "The Adventures of Huckleberry Finn",
+            "The Gilded Age",
+            "Roughing It"
+     ],
+     "image":"img/mTwain.jpeg"
+ },
+ {
+ "author":"Oscar Wilde",
+ "books":["The Importance of Being Ernest",
+        "The Picture of Dorian Grey",
+        "Lady Windermere's Fan",
+        "A Woman of No Importance"
+   ],
+   "image":"img/oWilde.jpeg"
+ },
+ {
+ "author": "Virginia Woolf",
+ "books": ["To the Lighthouse",
+          "Mrs Dalloway",
+          "The Waves",
+          "The Voyage Out"
+   ],
+   "image":"img/vWoolf.jpeg"
+ },
+ {
+ "author":"Henry James",
+ "books":["The Portrait of a Lady",
+        "The Wings of a Dove",
+        "The Ambassadors",
+        "The Bostonians"
+   ],
+   "image":"img/hJames.jpeg"
+},
+ {
+ "author": "George Eliot",
+ "books": ["Daniel Derronda",
+          "Middlemarch",
+          "Silas Marner",
+          "The Mill on the Floss",
+          "Adam Bede"
+   ],
+   "image":"img/gEliot.jpeg"
+ },
+ {
+   "author":"James Joyce",
+   "books":["Dubliners",
+            "Ulysses",
+            "The Dead",
+            "Eveline",
+            "A Portrait of the Artist as a Young Man"
+      
+     ],
+     "image":"img/jJoyce.jpeg"
+     
+ },
+ {
+   "author":"Anthony Trollope",
+   "books": ["The Way We Live Now",
+           "The Warden",
+           "Can You Forgive Her?",
+           "He Knew He Was Right"
+     ],
+     "image":"img/aTrollope.jpeg"
+ },
+ {"author":"William Makepiece Thackeray",
+ "books":["Vanity Fair",
+          "The Book of Snobs",
+          "The Virginians",
+          "The Rose and the Ring"
+   ],
+   "image":"img/thackeray.jpeg"
+ },
+ {
+   "author":"Emily Bronte",
+   "books":["Wuthering Heights"
+     ],
+     "image":"img/eBronte.jpeg"
+ },
+ {
+   "author":"Henry Fielding",
+   "books":["A History of Tom Jones",
+          "Amelia",
+          "From This World to the Next"
+     ],
+     "image":"img/hFielding.jpeg"
+ },
+ {
+   "author":"DH Lawrence",
+   "books":["The White Peacock",
+            "Lady Chatterley's Lover",
+            "The Rocking Horse Winner"
+     ],
+     "image":"img/dhLawrence.jpeg"
+ }
+   
+ 
+]
